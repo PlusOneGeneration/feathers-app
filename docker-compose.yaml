@@ -1,21 +1,6 @@
 version: '3'
 
 services:
-  frontend:
-    build: ./frontend-app
-    volumes:
-      - ./frontend-app:/app
-    working_dir: /app
-    command: npm start
-    ports:
-      - 4200:4200
-
-  frontend.console:
-    build: ./frontend-app
-    command: bash
-    volumes:
-      - ./frontend-app:/app
-    working_dir: /app
 
   backend:
     build: ./backend-app
@@ -35,6 +20,21 @@ services:
       - ./backend-app:/app
     working_dir: /app
 
+  frontend:
+    build: ./frontend-app
+    volumes:
+      - ./frontend-app:/app
+    working_dir: /app
+    command: npm start
+    ports:
+      - 4200:4200
+
+  frontend.console:
+    build: ./frontend-app
+    command: bash
+    volumes:
+      - ./frontend-app:/app
+    working_dir: /app
 
   redis:
     image: redis
