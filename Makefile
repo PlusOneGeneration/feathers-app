@@ -29,6 +29,9 @@ redis.console:
 mongo.console:
 	docker-compose run mongo.console
 
+ps:
+	docker-compose ps
+
 stop:
 	docker-compose stop
 
