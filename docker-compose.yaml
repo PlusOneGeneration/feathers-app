@@ -1,0 +1,51 @@
+version: '3'
+
+services:
+  frontend:
+    image: node:7
+    volumes:
+      - ./frontend-app:/app
+    working_dir: /app
+    command: npm start
+    ports:
+      - 4200
+
+  frontend.console:
+    image: node:7
+    command: bash
+    volumes:
+      - ./frontend-app:/app
+    working_dir: /app
+
+  backend:
+    image: node:7
+    volumes:
+      - ./backend-app:/app
+    working_dir: /app
+    command: npm start
+    ports:
+      - 3000
+
+  backend.console:
+    image: node:7
+    command: bash
+    volumes:
+      - ./backend-app:/app
+    working_dir: /app
+
+
+  redis:
+    image: redis
+  redis.console:
+    image: redis
+    command: redis-cli -h redis
+    links:
+      - redis
+  mongo:
+    image: mongo
+
+  mongo.console:
+    image: mongo
+    command: mongo --host mongo
+    links:
+      - mongo
