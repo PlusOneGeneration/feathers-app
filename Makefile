@@ -1,5 +1,5 @@
 help:
-	@echo Development App console
+	@echo "Development Docker compose console"
 	@echo
 	@echo "frontend                     - Starts frontend"
 	@echo "frontend.console             - Frontend console"
