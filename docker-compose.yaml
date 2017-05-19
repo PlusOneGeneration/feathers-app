@@ -29,6 +29,7 @@ services:
     command: redis-cli -h redis
     links:
       - redis
+
   mongo:
     image: mongo
 
