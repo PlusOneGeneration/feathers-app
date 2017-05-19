@@ -14,11 +14,19 @@ help:
 frontend:
 	docker-compose up frontend
 
+frontend.build:
+	docker-compose build frontend
+	docker-compose build frontend.console
+
 frontend.console:
 	docker-compose run frontend.console
 
 backend:
 	docker-compose up backend
+
+backend.build:
+	docker-compose build backend
+	docker-compose build backend.console
 
 backend.console:
 	docker-compose run backend.console
