@@ -16,20 +16,18 @@ frontend:
 
 frontend.build:
 	docker-compose build frontend
-	docker-compose build frontend.console
 
 frontend.console:
-	docker-compose run frontend.console
+	docker-compose run frontend bash
 
 backend:
 	docker-compose up backend
 
 backend.build:
 	docker-compose build backend
-	docker-compose build backend.console
 
 backend.console:
-	docker-compose run backend.console
+	docker-compose run backend bash
 
 redis.console:
 	docker-compose run redis.console
