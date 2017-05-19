@@ -3,12 +3,20 @@ help:
 	@echo
 	@echo "frontend                     - Starts frontend"
 	@echo "frontend.console             - Frontend console"
+	@echo "frontend.build               - Frontend build"
 
 	@echo "backend                      - Starts backend"
 	@echo "backend.console              - Starts backend console"
+	@echo "backend.build                - Backend build"
 
 	@echo "redis.console                - Redis console"
 	@echo "mongo.console                - MongoDB console"
+
+	@echo "ps                           - List of processes"
+	@echo "stop                         - Stop all processes"
+	@echo "kill                         - Kill current processes"
+	@echo "kill.all                     - Kill all docker processes"
+
 	@echo
 
 frontend:
@@ -18,7 +26,7 @@ frontend.build:
 	docker-compose build frontend
 
 frontend.console:
-	docker-compose run frontend bash
+	docker-compose run --rm frontend bash
 
 backend:
 	docker-compose up backend
@@ -27,13 +35,13 @@ backend.build:
 	docker-compose build backend
 
 backend.console:
-	docker-compose run backend bash
+	docker-compose run --rm backend bash
 
 redis.console:
-	docker-compose run redis.console
+	docker-compose run --rm redis.console
 
 mongo.console:
-	docker-compose run mongo.console
+	docker-compose run --rm mongo.console
 
 ps:
 	docker-compose ps
