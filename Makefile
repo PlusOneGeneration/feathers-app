@@ -1,5 +1,6 @@
 help:
-	@echo "Development Docker compose console"
+	@echo
+	@echo "> Development Docker Compose console"
 	@echo
 	@echo "frontend                     - Starts frontend"
 	@echo "frontend.console             - Frontend console"
@@ -42,6 +43,9 @@ redis.console:
 
 mongo.console:
 	docker-compose run --rm mongo.console
+
+elasticsearch:
+	docker-compose up elasticsearch
 
 ps:
 	docker-compose ps
