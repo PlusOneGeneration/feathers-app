@@ -1,3 +1,46 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-12">
+      <h3>
+        {{title}}
+      </h3>
+
+      <form (submit)="save()" class="form-inline">
+        <div class="form-group">
+          <div class="input-group">
+            <input type="text"
+                   [(ngModel)]="message.text"
+                   name="text"
+                   class="form-control"
+                   placeholder="Text.."
+                   required>
+
+            <div class="input-group-addon">
+              <button class="btn btn-xs btn-success">
+                <i class="glyphicon glyphicon-ok"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default" *ngFor="let message of messages">
+            <div class="panel-body">
+              {{message.text}}
+
+              <button class="btn-xs btn btn-danger pull-right" (click)="remove(message)">
+                <span class="glyphicon glyphicon-remove"></span>
+              </button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

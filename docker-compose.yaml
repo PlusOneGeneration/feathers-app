@@ -11,6 +11,8 @@ services:
     command: npm start
     ports:
       - 3000:3000
+    links:
+      - mongo
 
   frontend:
     build: ./frontend-app
@@ -20,6 +22,8 @@ services:
     command: npm start
     ports:
       - 4200:4200
+    links:
+      - backend
 
   redis:
     image: redis
@@ -35,7 +39,7 @@ services:
 
   mongo.console:
     image: mongo
-    command: mongo --host mongo
+    command: mongo mongo/dev
     links:
       - mongo
 
